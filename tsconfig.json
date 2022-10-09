@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ES2020",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src/",
+    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"]
+    },
+    "types": ["@types/node", "@types/jest", "@types/sinon"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["**/node_modules/"]
 }
